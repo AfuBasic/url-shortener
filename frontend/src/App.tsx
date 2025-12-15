@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://api.shortener.afuwapetunde.com";
 
 export default function App() {
   const [url, setUrl] = useState("");
