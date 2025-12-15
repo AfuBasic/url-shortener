@@ -51,17 +51,20 @@ Designed for reliability, simplicity, and real-world production use.
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/url-shortener.git
 cd url-shortener
 ```
 
 ### 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Environment Variables
+
 Create a `.env` file:
 
 ```env
@@ -71,11 +74,13 @@ BASE_URL=https://short.afuwapetunde.com
 ```
 
 ### 4. Build the project
+
 ```bash
 npm run build
 ```
 
 ### 5. Run the server
+
 ```bash
 npm start
 ```
@@ -85,11 +90,13 @@ npm start
 ## 📡 API Usage
 
 ### Shorten a URL
+
 ```http
-POST /api/shorten
+POST /shorten
 ```
 
 **Request Body**
+
 ```json
 {
   "url": "https://example.com/very-long-url"
@@ -97,9 +104,10 @@ POST /api/shorten
 ```
 
 **Response**
+
 ```json
 {
-  "shortUrl": "https://short.afuwapetunde.com/abc123"
+  "shortUrl": "https://shortener.afuwapetunde.com/abc123"
 }
 ```
 
@@ -110,10 +118,10 @@ POST /api/shorten
 **Afuwape Tunde**  
 Full-Stack Developer
 
-- 🌐 https://afuwapetunde.com  
-- 🐙 https://github.com/your-github-handle  
-- 💼 https://linkedin.com/in/your-linkedin  
-- ✉️ youremail@example.com  
+- 🌐 https://afuwapetunde.com
+- 🐙 https://github.com/your-github-handle
+- 💼 https://linkedin.com/in/your-linkedin
+- ✉️ youremail@example.com
 
 ---
 
