@@ -33,7 +33,7 @@ export default function App() {
       const data: unknown = await res.json();
 
       if (!res.ok || !isShortenResponse(data)) {
-        throw new Error(data.error);
+        throw new Error((data as { error: string }).error);
       }
 
       setShortUrl(`${API_BASE}/${data.shortCode}`);
