@@ -7,10 +7,10 @@ import React, {
 } from "react";
 import { toast } from "sonner";
 
-const API_BASE = "https://api.shortener.afuwapetunde.com";
+// const API_BASE = "https://api.shortener.afuwapetunde.com";
+const API_BASE = "http://localhost:3000";
 
 type ShortenResponse = { shortCode: string };
-type ErrorResponse = { error: string };
 
 function isObject(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null;
@@ -121,7 +121,7 @@ export default function App() {
       const isTypingField =
         tag === "input" ||
         tag === "textarea" ||
-        (target as any)?.isContentEditable;
+        (target as { isContentEditable: boolean })?.isContentEditable;
 
       if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
         // Cmd/Ctrl + Enter: submit
@@ -233,6 +233,7 @@ function LiveClicks({ code, clicks, setClicks }: LiveClicksProps) {
     );
 
     source.onmessage = (event) => {
+      console.log(event);
       const value = Number(event.data);
       if (!Number.isNaN(value)) setClicks(value);
     };
