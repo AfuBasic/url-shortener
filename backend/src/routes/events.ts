@@ -5,7 +5,7 @@ const eventRoutes = Router();
 
 eventRoutes.get("/events/:code", (req, res) => {
   const { code } = req.params;
-
+  console.log(code);
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache, no-transform");
   res.setHeader("Connection", "keep-alive");
