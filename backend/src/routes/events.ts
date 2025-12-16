@@ -16,7 +16,7 @@ eventRoutes.get("/events/:code", (req, res) => {
   );
   res.flushHeaders();
   res.write("data: Connected!\n\n");
-  console.log("Handshake written");
+
   if (!subscribers.has(code)) {
     subscribers.set(code, new Set());
   }
