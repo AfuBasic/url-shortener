@@ -15,6 +15,7 @@ eventRoutes.get("/events/:code", (req, res) => {
     "https://shortener.afuwapetunde.com"
   );
   res.flushHeaders();
+  res.write("data: Connected!\n\n");
 
   if (!subscribers.has(code)) {
     subscribers.set(code, new Set());
