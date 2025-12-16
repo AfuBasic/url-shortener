@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import Link from "../models/Link.js";
 import { recordClick } from "../jobs/recordClick.js";
 import { isValidUrl } from "../utils/validator.js";
+import { subscribers } from "../sse/subscribers.js";
 
 const router = Router();
 const CODE_LENGTH = 7;
@@ -36,6 +37,12 @@ router.get("/:code", async (req, res) => {
 
   setImmediate(() => {
     recordClick(link._id.toString(), req.ip).catch(() => {});
+    const listeners = subscribers.get(link.code || "");
+    if (listeners) {
+      for (const res of listeners) {
+        res.write(`data: ${link.clickCount}`);
+      }
+    }
   });
 
   return res.redirect(link.targetUrl);
