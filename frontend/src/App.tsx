@@ -233,6 +233,7 @@ function LiveClicks({ code, clicks, setClicks }: LiveClicksProps) {
     );
 
     source.onmessage = (event) => {
+      console.log(event);
       const value = Number(event.data);
       if (!Number.isNaN(value)) setClicks(value);
     };
