@@ -7,8 +7,8 @@ import React, {
 } from "react";
 import { toast } from "sonner";
 
-// const API_BASE = "https://api.shortener.afuwapetunde.com";
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://api.shortener.afuwapetunde.com";
+// const API_BASE = "http://localhost:3000";
 
 type ShortenResponse = { shortCode: string };
 
